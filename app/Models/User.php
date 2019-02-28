@@ -15,7 +15,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 
-class User extends \App\Models\Base\User implements Transformable,AuthenticatableContract,
+class User extends \ManagerMembers\Models\Base\User implements Transformable,AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ManagerMember\Providers;
+namespace ManagerMembers\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -30,10 +30,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             'ManagerMember\Repositories\MemberRepository',
             'ManagerMember\Repositories\MemberRepositoryEloquent'
-        );
-        $this->app->bind(
-            'ManagerMember\Repositories\UserPermissionRepository',
-            'ManagerMember\Repositories\UserPermissionRepositoryEloquent'
         );
     }
 }

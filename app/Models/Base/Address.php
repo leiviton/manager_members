@@ -5,7 +5,7 @@
  * Date: Mon, 25 Feb 2019 19:00:22 +0000.
  */
 
-namespace App\Models\Base;
+namespace ManagerMembers\Models\Base;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
 
@@ -26,7 +26,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
- * @property \App\Models\Member $member
+ * @property \ManagerMembers\Models\Member $member
  *
  * @package App\Models\Base
  */
@@ -41,6 +41,6 @@ class Address extends Eloquent
 
 	public function member()
 	{
-		return $this->belongsTo(\App\Models\Member::class);
+		return $this->belongsTo(\ManagerMembers\Models\Member::class);
 	}
 }

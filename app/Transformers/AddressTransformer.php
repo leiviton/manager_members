@@ -8,7 +8,7 @@ use ManagerMembers\Models\Address;
 /**
  * Class AddressTransformer.
  *
- * @package namespace ManagerMembers\Transformers;
+ * @package namespace ApiLimp\Transformers;
  */
 class AddressTransformer extends TransformerAbstract
 {
@@ -23,9 +23,16 @@ class AddressTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
+            'street' => $model->street,
+            'number' => $model->number,
+            'complement' => $model->complement,
+            'neighborhood' => $model->neighborhood,
+            'city' => $model->city,
+            'state' => $model->state,
+            'postal_code' => $model->postal_code,
+            'lat' => $model->lat,
+            'lon' => $model->lon,
             /* place your other model properties here */
-
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];

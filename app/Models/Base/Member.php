@@ -5,7 +5,7 @@
  * Date: Mon, 25 Feb 2019 19:00:22 +0000.
  */
 
-namespace App\Models\Base;
+namespace ManagerMembers\Models\Base;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
 
@@ -25,7 +25,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
- * @property \App\Models\User $user
+ * @property \ManagerMembers\Models\User $user
  * @property \Illuminate\Database\Eloquent\Collection $addresses
  *
  * @package App\Models\Base
@@ -38,11 +38,11 @@ class Member extends Eloquent
 
 	public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class);
+		return $this->belongsTo(\ManagerMembers\Models\User::class);
 	}
 
 	public function addresses()
 	{
-		return $this->hasMany(\App\Models\Address::class);
+		return $this->hasMany(\ManagerMembers\Models\Address::class);
 	}
 }
