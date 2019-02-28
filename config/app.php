@@ -165,7 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -174,6 +176,7 @@ return [
         // ManagerMembers\Providers\BroadcastServiceProvider::class,
         ManagerMembers\Providers\EventServiceProvider::class,
         ManagerMembers\Providers\RouteServiceProvider::class,
+        ManagerMembers\Providers\RepositoryServiceProvider::class,
 
     ],
 

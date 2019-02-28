@@ -5,7 +5,7 @@
  * Date: Mon, 25 Feb 2019 19:06:12 +0000.
  */
 
-namespace App\Models\Base;
+namespace ManagerMembers\Models\Base;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
 
@@ -26,7 +26,7 @@ class Permission extends Eloquent
 {
 	public function users()
 	{
-		return $this->belongsToMany(\App\Models\User::class, 'user_permissions')
+		return $this->belongsToMany(\ManagerMembers\Models\User::class, 'user_permissions')
 					->withPivot('id')
 					->withTimestamps();
 	}

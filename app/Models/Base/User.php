@@ -5,7 +5,7 @@
  * Date: Mon, 25 Feb 2019 19:00:47 +0000.
  */
 
-namespace App\Models\Base;
+namespace ManagerMembers\Models\Base;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

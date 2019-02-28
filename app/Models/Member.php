@@ -10,7 +10,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  *
  * @package namespace ManagerMembers\Models;
  */
-class Member extends \App\Models\Base\Member implements Transformable
+class Member extends \ManagerMembers\Models\Base\Member implements Transformable
 {
     use TransformableTrait;
 

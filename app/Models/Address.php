@@ -11,7 +11,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  *
  * @package namespace ManagerMembers\Models;
  */
-class Address extends Model implements Transformable
+class Address extends \ManagerMembers\Models\Base\Address implements Transformable
 {
     use TransformableTrait;
 
