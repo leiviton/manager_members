@@ -2,9 +2,9 @@
 
 namespace ManagerMembers\Http\Requests\Api\V1\Admin;
 
-use Illuminate\Foundation\Http\FormRequest;
+use ManagerMembers\Http\Requests\Request;
 
-class MembersControllerCreateRequest extends FormRequest
+class MembersControllerCreateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class MembersControllerCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,6 @@ class MembersControllerCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }
