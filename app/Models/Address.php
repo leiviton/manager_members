@@ -28,8 +28,6 @@ class Address extends \ManagerMembers\Models\Base\Address implements Transformab
         'neighborhood',
         'city',
         'state',
-        'postal_code',
-        'lat',
-        'lon'
+        'postal_code'
     ];
 }

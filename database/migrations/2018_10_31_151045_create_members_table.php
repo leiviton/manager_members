@@ -20,6 +20,8 @@ class CreateMembersTable extends Migration
             $table->string('sobrenome')->nullable();
             $table->string('pai')->nullable();
             $table->string('mae')->nullable();
+            $table->string('img_profile')->nullable();
+            $table->date('data_nascimento');
             $table->string('cpf', 18);
             $table->string('rg', 18);
             $table->string('email', 50)->unique();

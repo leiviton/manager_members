@@ -23,8 +23,6 @@ class CreateAdressesTable extends Migration
             $table->string('city', 70);
             $table->char('state', 2);
             $table->char('postal_code', 25);
-            $table->decimal('lat', 10, 2);
-            $table->decimal('lon', 11, 2);
             $table->foreign('member_id')->references('id')->on('members');
             $table->timestamps();
         });

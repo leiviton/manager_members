@@ -24,12 +24,16 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'ManagerMember\Repositories\UserRepository',
-            'ManagerMember\Repositories\UserRepositoryEloquent'
+            'ManagerMembers\Repositories\UserRepository',
+            'ManagerMembers\Repositories\UserRepositoryEloquent'
         );
         $this->app->bind(
-            'ManagerMember\Repositories\MemberRepository',
-            'ManagerMember\Repositories\MemberRepositoryEloquent'
+            'ManagerMembers\Repositories\MemberRepository',
+            'ManagerMembers\Repositories\MemberRepositoryEloquent'
+        );
+        $this->app->bind(
+            'ManagerMembers\Repositories\AddressRepository',
+            'ManagerMembers\Repositories\AddressRepositoryEloquent'
         );
     }
 }
