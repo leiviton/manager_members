@@ -21,6 +21,8 @@ class Member extends \ManagerMembers\Models\Base\Member implements Transformable
      */
     protected $fillable = [
         'user_id',
+        'img_profile',
+        'data_nascimento',
         'nome',
         'sobrenome',
         'pai',

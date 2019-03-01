@@ -31,5 +31,9 @@ class RepositoryServiceProvider extends ServiceProvider
             'ManagerMembers\Repositories\MemberRepository',
             'ManagerMembers\Repositories\MemberRepositoryEloquent'
         );
+        $this->app->bind(
+            'ManagerMembers\Repositories\AddressRepository',
+            'ManagerMembers\Repositories\AddressRepositoryEloquent'
+        );
     }
 }

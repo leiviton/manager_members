@@ -1,6 +1,6 @@
 <?php
 
-use ManagerMembers\Model\User;
+use ManagerMembers\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder

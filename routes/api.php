@@ -26,4 +26,10 @@ Route::group(['prefix' => 'v1/admin','namespace'=>'Api\V1\Admin','middleware' =>
     Route::get('user/{id}','UserController@edit');
     Route::put('user/{id}','UserController@update');
     Route::delete('user/{id}','UserController@delete');
+    /*Users*/
+    Route::post('members','MembersController@store');
+    Route::get('members','MembersController@index');
+    Route::get('members/{id}','MembersController@edit');
+    Route::put('members/{id}','MembersController@update');
+    Route::delete('members/{id}','MembersController@delete');
 });

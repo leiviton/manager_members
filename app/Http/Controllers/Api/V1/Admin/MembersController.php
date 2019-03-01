@@ -27,7 +27,7 @@ class MembersController extends Controller
      */
     public function index()
     {
-        //
+        return $this->service->listar();
     }
 
     /**
@@ -59,7 +59,7 @@ class MembersController extends Controller
 
         $result = $this->service->create($data);
 
-        if($result) {
+        if($result->id) {
             return response()->json(['message'=>'Cadastro realizado com sucesso','status'=>'success','title'=>'Sucesso'],201);
         }else{
             return response()->json(['message' => 'Houve um erro, tente novamente','status' => 'error','title'=>'Erro'],400);
@@ -72,9 +72,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function edit($id)
     {
-        //
+        return $this->service->find($id);
     }
 
     /**
@@ -104,7 +104,7 @@ class MembersController extends Controller
             if (!$upload) {
                 return response()->json(['message' => 'arquivo nao enviado', 'status' => 'error'], 400);
             } else {
-                return response()->json(['message' => 'arquivo enviado', 'status' => 'success', 'name' => $nameFile, 'url' => env("APP_URL").'/storage/professional/'.$nameFile], 200);
+                return response()->json(['message' => 'arquivo enviado', 'status' => 'success', 'name' => $nameFile, 'url' => env("APP_URL").'/storage/members/'.$nameFile], 200);
             }
         }
     }
