@@ -16,6 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $user_id
  * @property string $nome
  * @property string $sobrenome
+ * @property string $img_profile
  * @property string $pai
  * @property string $mae
  * @property string $cpf

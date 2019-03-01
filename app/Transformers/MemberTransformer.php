@@ -26,6 +26,7 @@ class MemberTransformer extends TransformerAbstract
             'id'         => (int) $model->id,
             'nome' => $model->nome,
             'sobrenome' => $model->sobrenome,
+            'img_profile' => $model->img_profile,
             'pai' => $model->pai,
             'mae' => $model->mae,
             'cpf' => $model->cpf,
