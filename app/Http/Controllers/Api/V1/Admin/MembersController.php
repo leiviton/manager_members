@@ -6,7 +6,7 @@ use Dotenv\Validator;
 use Illuminate\Http\Request;
 use ManagerMembers\Http\Controllers\Controller;
 use ManagerMembers\Http\Requests\Api\V1\Admin\MembersControllerCreateRequest;
-use ManagerMembers\Repositories\MemberRepository;
+
 use ManagerMembers\Services\MemberService;
 
 class MembersController extends Controller
@@ -15,12 +15,12 @@ class MembersController extends Controller
      * @var MemberService
      */
     private $service;
-    private $repository;
 
-    public function __construct(MemberService $service, MemberRepository $repository)
+
+    public function __construct(MemberService $service)
     {
         $this->service = $service;
-        $this->repository= $repository;
+
     }
 
     /**
@@ -89,11 +89,35 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator($request->all(),[
+            'nome' => 'required|min:5',
+            'sobrenome' => 'required|min:5',
+            'pai' => 'required|min:5',
+            'mae' => 'required|min:5',
+            'email' => 'required|min:10|email|',
+            'cpf' => 'required|min:10',
+            'rg' => 'required|min:8',
+            'whatsapp' => 'required|min:10'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'title' => 'Erro',
+                'status' => 'error',
+                'message' => $validator->messages()->first()
+            ], 406);
+        }
+
+
         $data = $request->all();
 
-        $this->update($data, $id);
+        $result = $this-> service->update($data, $id);
 
-        return response()->json(['message'=>'Registro alterado com sucesso','status'=>'success','title'=>'Sucesso'],201);
+        if($result->id) {
+            return response()->json(['message'=>'Alteração realizada com sucesso','status'=>'success','title'=>'Sucesso'],201);
+        }else{
+            return response()->json(['message' => 'Houve um erro, tente novamente','status' => 'error','title'=>'Erro'],400);
+        }
 
 
     }
