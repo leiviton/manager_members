@@ -101,4 +101,26 @@ class MemberService
             return new \DateTime($result);
         }
     }
+
+    public function update(array $data, $id)
+    {
+
+        DB::beginTransaction();
+        try{
+            $this->memberRepository->update($data, $id);
+
+            $memberId = $this->memberRepository->find($id, ['user_id'])->user_id;
+
+            $member_update = $this->memberRepository->update($data['user'], $memberId);
+
+            DB::commit();
+
+            return $member_update;
+
+        }catch (\Exception $e){
+            DB::rollBack();
+            return $e;
+        }
+
+    }
 }

@@ -6,6 +6,7 @@ use Dotenv\Validator;
 use Illuminate\Http\Request;
 use ManagerMembers\Http\Controllers\Controller;
 use ManagerMembers\Http\Requests\Api\V1\Admin\MembersControllerCreateRequest;
+use ManagerMembers\Repositories\MemberRepository;
 use ManagerMembers\Services\MemberService;
 
 class MembersController extends Controller
@@ -14,10 +15,12 @@ class MembersController extends Controller
      * @var MemberService
      */
     private $service;
+    private $repository;
 
-    public function __construct(MemberService $service)
+    public function __construct(MemberService $service, MemberRepository $repository)
     {
         $this->service = $service;
+        $this->repository= $repository;
     }
 
     /**
@@ -86,7 +89,13 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $this->update($data, $id);
+
+        return response()->json(['message'=>'Registro alterado com sucesso','status'=>'success','title'=>'Sucesso'],201);
+
+
     }
 
     /**
